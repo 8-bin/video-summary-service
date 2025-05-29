@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>유튜브 요약 서비스</title>
+</head>
+<body>
+    <h2>🎬 유튜브 요약 요청</h2>
+    <form action="/summarize" method="post">
+        <label>유튜브 링크:</label>
+        <input type="text" name="youtube_link" required><br><br>
+
+        <label>요약 줄 수:</label>
+        <input type="number" name="summary_lines" value="5"><br><br>
+
+        <label>요약 스타일:</label>
+        <select name="summary_style">
+            <option value="simple">간단 요약</option>
+            <option value="detailed">자세한 요약</option>
+            <option value="keywords">핵심 키워드</option>
+        </select><br><br>
+
+        <label>언어:</label>
+        <select name="language">
+            <option value="ko">한국어</option>
+            <option value="en">영어</option>
+        </select><br><br>
+
+        <button type="submit">요약 요청</button>
+    </form>
+</body>
+</html>

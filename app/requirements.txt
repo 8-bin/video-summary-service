@@ -1,0 +1,16 @@
+### 📦 requirements.txt
+
+fastapi
+uvicorn
+boto3
+requests
+jinja2
+
+# 유튜브 다운로드용
+yt-dlp
+
+# AWS CLI 연동 (로컬 개발용, 선택)
+awscli
+
+# Bedrock 사용 시 필요한 추가 라이브러리 (특정 환경에서는 필요할 수 있음)
+botocore
