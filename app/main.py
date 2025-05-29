@@ -31,7 +31,10 @@ async def summarize(
     transcript_text = transcribe_utils.run_transcribe(s3_uri)
 
     # 4️⃣ Bedrock 요약
-    prompt = f"다음 내용을 {summary_lines}줄로 {summary_style} 스타일로 요약해줘. 언어는 {language}로 해줘.\n\n내용:\n{transcript_text}"
+    prompt = (
+        f"Human: 다음 내용을 {summary_lines}줄로 {summary_style} 스타일로 요약해줘. "
+        f"언어는 {language}로 해줘.\n\n내용:\n{transcript_text}\n\nAssistant:"
+    )
     summary = bedrock_utils.call_bedrock(prompt)
 
     return templates.TemplateResponse("result.html", {"request": request, "summary": summary})
